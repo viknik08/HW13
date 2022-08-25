@@ -1,15 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "icons8-центр-уведомлений-50.png",
+      "filename" : "icons8-центр-уведомлений-53.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "icons8-центр-уведомлений-54.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
+      "filename" : "icons8-центр-уведомлений-51.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

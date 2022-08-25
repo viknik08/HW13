@@ -17,6 +17,7 @@
 		BEEBF35028B7660B00B9D46D /* CustomViewCellEmpty.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEEBF34F28B7660B00B9D46D /* CustomViewCellEmpty.swift */; };
 		BEEBF35228B7662300B9D46D /* CustomViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEEBF35128B7662300B9D46D /* CustomViewCell.swift */; };
 		BEEBF35528B76AF700B9D46D /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = BEEBF35428B76AF700B9D46D /* SnapKit */; };
+		BEEBF35728B77CAA00B9D46D /* Extension + StackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEEBF35628B77CAA00B9D46D /* Extension + StackView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 		BEEBF34D28B765EB00B9D46D /* CustomViewCellSwitcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomViewCellSwitcher.swift; sourceTree = "<group>"; };
 		BEEBF34F28B7660B00B9D46D /* CustomViewCellEmpty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomViewCellEmpty.swift; sourceTree = "<group>"; };
 		BEEBF35128B7662300B9D46D /* CustomViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomViewCell.swift; sourceTree = "<group>"; };
+		BEEBF35628B77CAA00B9D46D /* Extension + StackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension + StackView.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +122,7 @@
 		BEEBF34728B7643400B9D46D /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				BEEBF35628B77CAA00B9D46D /* Extension + StackView.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -216,6 +219,7 @@
 				BEEBF34C28B765CA00B9D46D /* DetailView.swift in Sources */,
 				BEEBF35228B7662300B9D46D /* CustomViewCell.swift in Sources */,
 				BEEBF34E28B765EB00B9D46D /* CustomViewCellSwitcher.swift in Sources */,
+				BEEBF35728B77CAA00B9D46D /* Extension + StackView.swift in Sources */,
 				BEEBF33128B75F8700B9D46D /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
