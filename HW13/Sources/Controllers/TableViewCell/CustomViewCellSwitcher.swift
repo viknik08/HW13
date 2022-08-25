@@ -61,7 +61,8 @@ class CustomViewCellSwitcher: UITableViewCell {
     
     private func setupLayout() {
         stackView.snp.makeConstraints { make in
-            make.top.left.equalTo(contentView).offset(10)
+            make.top.equalTo(contentView).offset(10)
+            make.left.equalTo(contentView).offset(20)
             make.center.equalTo(contentView)
         }
         image.snp.makeConstraints { make in
