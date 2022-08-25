@@ -22,13 +22,11 @@ class CustomViewCell: UITableViewCell {
     private let image: UIImageView = {
         let image = UIImageView()
         image.clipsToBounds = true
-        image.image = UIImage(systemName: "person")
         image.contentMode = .scaleAspectFill
         return image
     }()
     private let label: UILabel = {
         let label = UILabel()
-        label.text = "Hello"
         label.font = UIFont.systemFont(ofSize: 15, weight: .bold)
         return label
     }()
