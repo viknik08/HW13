@@ -26,6 +26,7 @@ class SettingsViewController: UIViewController {
         view.backgroundColor = .white
         title = "Settings"
         navigationController?.navigationBar.prefersLargeTitles = true
+        settings = Settings.settings
         setupHierarhy()
         setupLayout()
     }
@@ -59,9 +60,16 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! CustomViewCell
-//        cell.setting = settings?[indexPath.section][indexPath.row]
-        cell.accessoryType = .detailDisclosureButton
+        cell.setting = settings?[indexPath.section][indexPath.row]
+        cell.accessoryType = .disclosureIndicator
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let viewController = DetailViewController()
+        tableView.deselectRow(at: indexPath, animated: true)
+        viewController.person = persons?[indexPath.section][indexPath.row]
+        navigationController?.pushViewController(viewController, animated: true)
     }
     
     
