@@ -16,7 +16,7 @@ class SettingsViewController: UIViewController {
     
     private lazy var tableView: UITableView = {
         let tableView = UITableView(frame: .zero, style: .grouped)
-        tableView.register(CustomViewCellSwitcher.self, forCellReuseIdentifier: "cell")
+        tableView.register(CustomViewCellEmpty.self, forCellReuseIdentifier: "cell")
         tableView.delegate = self
         tableView.dataSource = self
         return tableView
@@ -64,7 +64,7 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! CustomViewCellSwitcher
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! CustomViewCellEmpty
         cell.setting = settings?[indexPath.section][indexPath.row]
         cell.accessoryType = .disclosureIndicator
         return cell
