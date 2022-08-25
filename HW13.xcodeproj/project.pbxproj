@@ -16,6 +16,7 @@
 		BEEBF34E28B765EB00B9D46D /* CustomViewCellSwitcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEEBF34D28B765EB00B9D46D /* CustomViewCellSwitcher.swift */; };
 		BEEBF35028B7660B00B9D46D /* CustomViewCellEmpty.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEEBF34F28B7660B00B9D46D /* CustomViewCellEmpty.swift */; };
 		BEEBF35228B7662300B9D46D /* CustomViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEEBF35128B7662300B9D46D /* CustomViewCell.swift */; };
+		BEEBF35528B76AF700B9D46D /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = BEEBF35428B76AF700B9D46D /* SnapKit */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BEEBF35528B76AF700B9D46D /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -148,6 +150,9 @@
 			dependencies = (
 			);
 			name = HW13;
+			packageProductDependencies = (
+				BEEBF35428B76AF700B9D46D /* SnapKit */,
+			);
 			productName = HW13;
 			productReference = BEEBF32B28B75F8700B9D46D /* HW13.app */;
 			productType = "com.apple.product-type.application";
@@ -176,6 +181,9 @@
 				Base,
 			);
 			mainGroup = BEEBF32228B75F8700B9D46D;
+			packageReferences = (
+				BEEBF35328B76AF700B9D46D /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
 			productRefGroup = BEEBF32C28B75F8700B9D46D /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -407,6 +415,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		BEEBF35328B76AF700B9D46D /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				branch = develop;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		BEEBF35428B76AF700B9D46D /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BEEBF35328B76AF700B9D46D /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = BEEBF32328B75F8700B9D46D /* Project object */;
 }

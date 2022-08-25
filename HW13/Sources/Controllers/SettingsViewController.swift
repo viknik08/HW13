@@ -6,12 +6,13 @@
 //
 
 import UIKit
+import SnapKit
 
 class SettingsViewController: UIViewController {
 //MARK: - Outlets
     private lazy var tableView: UITableView = {
-        let tableView = UITableView()
-        tableView.register(CustomViewCell.self, forHeaderFooterViewReuseIdentifier: "cell")
+        let tableView = UITableView(frame: .zero, style: .grouped)
+        tableView.register(CustomViewCell.self, forCellReuseIdentifier: "cell")
         tableView.delegate = self
         tableView.dataSource = self
         return tableView
@@ -19,11 +20,22 @@ class SettingsViewController: UIViewController {
 //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .systemBlue
+        view.backgroundColor = .white
+        title = "Settings"
         navigationController?.navigationBar.prefersLargeTitles = true
+        setupHierarhy()
+        setupLayout()
     }
     
 //MARK: - Setup
+    private func setupHierarhy() {
+        view.addSubview(tableView)
+    }
+    private func setupLayout() {
+        tableView.snp.makeConstraints { make in
+            make.top.left.right.bottom.equalTo(view)
+        }
+    }
 
 }
 //MARK: - Extension DataSource Delegate
@@ -32,7 +44,6 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         10
     }
-    
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? CustomViewCell
