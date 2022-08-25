@@ -68,7 +68,7 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let viewController = DetailViewController()
         tableView.deselectRow(at: indexPath, animated: true)
-        viewController.person = persons?[indexPath.section][indexPath.row]
+        viewController.setting = settings?[indexPath.section][indexPath.row]
         navigationController?.pushViewController(viewController, animated: true)
     }
     
