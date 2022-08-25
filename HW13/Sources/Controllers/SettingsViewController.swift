@@ -13,6 +13,7 @@ class SettingsViewController: UIViewController {
     private var settings: [[Settings]]?
     
 //MARK: - Outlets
+    
     private lazy var tableView: UITableView = {
         let tableView = UITableView(frame: .zero, style: .grouped)
         tableView.register(CustomViewCell.self, forCellReuseIdentifier: "cell")
@@ -20,7 +21,9 @@ class SettingsViewController: UIViewController {
         tableView.dataSource = self
         return tableView
     }()
+    
 //MARK: - Lifecycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
@@ -32,17 +35,20 @@ class SettingsViewController: UIViewController {
     }
     
 //MARK: - Setup
+    
     private func setupHierarhy() {
         view.addSubview(tableView)
     }
+    
     private func setupLayout() {
         tableView.snp.makeConstraints { make in
             make.top.left.right.bottom.equalTo(view)
         }
     }
-
 }
+
 //MARK: - Extension DataSource Delegate
+
 extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -51,7 +57,6 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return settings?.count ?? 0
-
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
