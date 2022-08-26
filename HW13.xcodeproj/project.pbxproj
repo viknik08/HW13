@@ -18,6 +18,8 @@
 		BEEBF35228B7662300B9D46D /* CustomViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEEBF35128B7662300B9D46D /* CustomViewCell.swift */; };
 		BEEBF35528B76AF700B9D46D /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = BEEBF35428B76AF700B9D46D /* SnapKit */; };
 		BEEBF35728B77CAA00B9D46D /* Extension + StackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEEBF35628B77CAA00B9D46D /* Extension + StackView.swift */; };
+		BEEBF35B28B8C60A00B9D46D /* CustomViewCellWithLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEEBF35A28B8C60900B9D46D /* CustomViewCellWithLabel.swift */; };
+		BEEBF35D28B8CD5000B9D46D /* CustomViewCellTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEEBF35C28B8CD5000B9D46D /* CustomViewCellTitle.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +35,8 @@
 		BEEBF34F28B7660B00B9D46D /* CustomViewCellNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomViewCellNotification.swift; sourceTree = "<group>"; };
 		BEEBF35128B7662300B9D46D /* CustomViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomViewCell.swift; sourceTree = "<group>"; };
 		BEEBF35628B77CAA00B9D46D /* Extension + StackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension + StackView.swift"; sourceTree = "<group>"; };
+		BEEBF35A28B8C60900B9D46D /* CustomViewCellWithLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomViewCellWithLabel.swift; sourceTree = "<group>"; };
+		BEEBF35C28B8CD5000B9D46D /* CustomViewCellTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomViewCellTitle.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +137,8 @@
 				BEEBF34D28B765EB00B9D46D /* CustomViewCellSwitcher.swift */,
 				BEEBF34F28B7660B00B9D46D /* CustomViewCellNotification.swift */,
 				BEEBF35128B7662300B9D46D /* CustomViewCell.swift */,
+				BEEBF35A28B8C60900B9D46D /* CustomViewCellWithLabel.swift */,
+				BEEBF35C28B8CD5000B9D46D /* CustomViewCellTitle.swift */,
 			);
 			path = TableViewCell;
 			sourceTree = "<group>";
@@ -212,11 +218,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BEEBF35B28B8C60A00B9D46D /* CustomViewCellWithLabel.swift in Sources */,
 				BEEBF33328B75F8700B9D46D /* SettingsViewController.swift in Sources */,
 				BEEBF34A28B7659500B9D46D /* Model.swift in Sources */,
 				BEEBF35028B7660B00B9D46D /* CustomViewCellNotification.swift in Sources */,
 				BEEBF32F28B75F8700B9D46D /* AppDelegate.swift in Sources */,
 				BEEBF34C28B765CA00B9D46D /* DetailView.swift in Sources */,
+				BEEBF35D28B8CD5000B9D46D /* CustomViewCellTitle.swift in Sources */,
 				BEEBF35228B7662300B9D46D /* CustomViewCell.swift in Sources */,
 				BEEBF34E28B765EB00B9D46D /* CustomViewCellSwitcher.swift in Sources */,
 				BEEBF35728B77CAA00B9D46D /* Extension + StackView.swift in Sources */,
