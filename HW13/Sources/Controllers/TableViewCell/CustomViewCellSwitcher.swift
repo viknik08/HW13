@@ -70,7 +70,7 @@ class CustomViewCellSwitcher: UITableViewCell {
         }
         switcher.snp.makeConstraints { make in
             make.top.equalTo(contentView).offset(10)
-            make.right.equalTo(self).offset(-40)
+            make.right.equalTo(self).offset(-20)
         }
     }
     
