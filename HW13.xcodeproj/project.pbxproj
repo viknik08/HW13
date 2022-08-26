@@ -14,7 +14,7 @@
 		BEEBF34A28B7659500B9D46D /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEEBF34928B7659500B9D46D /* Model.swift */; };
 		BEEBF34C28B765CA00B9D46D /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEEBF34B28B765CA00B9D46D /* DetailView.swift */; };
 		BEEBF34E28B765EB00B9D46D /* CustomViewCellSwitcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEEBF34D28B765EB00B9D46D /* CustomViewCellSwitcher.swift */; };
-		BEEBF35028B7660B00B9D46D /* CustomViewCellEmpty.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEEBF34F28B7660B00B9D46D /* CustomViewCellEmpty.swift */; };
+		BEEBF35028B7660B00B9D46D /* CustomViewCellNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEEBF34F28B7660B00B9D46D /* CustomViewCellNotification.swift */; };
 		BEEBF35228B7662300B9D46D /* CustomViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEEBF35128B7662300B9D46D /* CustomViewCell.swift */; };
 		BEEBF35528B76AF700B9D46D /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = BEEBF35428B76AF700B9D46D /* SnapKit */; };
 		BEEBF35728B77CAA00B9D46D /* Extension + StackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEEBF35628B77CAA00B9D46D /* Extension + StackView.swift */; };
@@ -30,7 +30,7 @@
 		BEEBF34928B7659500B9D46D /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		BEEBF34B28B765CA00B9D46D /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		BEEBF34D28B765EB00B9D46D /* CustomViewCellSwitcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomViewCellSwitcher.swift; sourceTree = "<group>"; };
-		BEEBF34F28B7660B00B9D46D /* CustomViewCellEmpty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomViewCellEmpty.swift; sourceTree = "<group>"; };
+		BEEBF34F28B7660B00B9D46D /* CustomViewCellNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomViewCellNotification.swift; sourceTree = "<group>"; };
 		BEEBF35128B7662300B9D46D /* CustomViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomViewCell.swift; sourceTree = "<group>"; };
 		BEEBF35628B77CAA00B9D46D /* Extension + StackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension + StackView.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -131,7 +131,7 @@
 			isa = PBXGroup;
 			children = (
 				BEEBF34D28B765EB00B9D46D /* CustomViewCellSwitcher.swift */,
-				BEEBF34F28B7660B00B9D46D /* CustomViewCellEmpty.swift */,
+				BEEBF34F28B7660B00B9D46D /* CustomViewCellNotification.swift */,
 				BEEBF35128B7662300B9D46D /* CustomViewCell.swift */,
 			);
 			path = TableViewCell;
@@ -214,7 +214,7 @@
 			files = (
 				BEEBF33328B75F8700B9D46D /* SettingsViewController.swift in Sources */,
 				BEEBF34A28B7659500B9D46D /* Model.swift in Sources */,
-				BEEBF35028B7660B00B9D46D /* CustomViewCellEmpty.swift in Sources */,
+				BEEBF35028B7660B00B9D46D /* CustomViewCellNotification.swift in Sources */,
 				BEEBF32F28B75F8700B9D46D /* AppDelegate.swift in Sources */,
 				BEEBF34C28B765CA00B9D46D /* DetailView.swift in Sources */,
 				BEEBF35228B7662300B9D46D /* CustomViewCell.swift in Sources */,

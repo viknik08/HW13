@@ -28,7 +28,7 @@ class CustomViewCell: UITableViewCell {
     
     private let label: UILabel = {
         let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 15, weight: .bold)
+        label.font = UIFont.systemFont(ofSize: 18, weight: .bold)
         return label
     }()
     
@@ -60,9 +60,10 @@ class CustomViewCell: UITableViewCell {
             make.center.equalTo(contentView)
         }
         image.snp.makeConstraints { make in
-            make.height.width.equalTo(20)
+            make.height.width.equalTo(30)
         }
     }
+    
 // MARK: - Reuse
     
     override func prepareForReuse() {

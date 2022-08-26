@@ -28,7 +28,7 @@ class CustomViewCellSwitcher: UITableViewCell {
     
     private let label: UILabel = {
         let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 15, weight: .bold)
+        label.font = UIFont.systemFont(ofSize: 18, weight: .bold)
         return label
     }()
     
@@ -66,13 +66,14 @@ class CustomViewCellSwitcher: UITableViewCell {
             make.center.equalTo(contentView)
         }
         image.snp.makeConstraints { make in
-            make.height.width.equalTo(20)
+            make.height.width.equalTo(30)
         }
         switcher.snp.makeConstraints { make in
-            make.top.equalTo(contentView).offset(5)
+            make.top.equalTo(contentView).offset(10)
             make.right.equalTo(self).offset(-40)
         }
     }
+    
 // MARK: - Reuse
     
     override func prepareForReuse() {

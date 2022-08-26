@@ -16,7 +16,7 @@ class SettingsViewController: UIViewController {
     
     private lazy var tableView: UITableView = {
         let tableView = UITableView(frame: .zero, style: .grouped)
-        tableView.register(CustomViewCellEmpty.self, forCellReuseIdentifier: "cell")
+        tableView.register(CustomViewCell.self, forCellReuseIdentifier: "cell")
         tableView.delegate = self
         tableView.dataSource = self
         return tableView
@@ -52,7 +52,7 @@ class SettingsViewController: UIViewController {
 extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        40
+        50
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -64,7 +64,7 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! CustomViewCellEmpty
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! CustomViewCell
         cell.setting = settings?[indexPath.section][indexPath.row]
         cell.accessoryType = .disclosureIndicator
         return cell
