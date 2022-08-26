@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-class CustomViewCellNotification: UITableViewCell {
+final class CustomViewCellNotification: UITableViewCell {
     
     var setting: Settings? {
         didSet {

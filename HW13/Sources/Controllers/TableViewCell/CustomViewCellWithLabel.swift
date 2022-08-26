@@ -1,40 +1,43 @@
 //
-//  CustomViewCellSwitcher.swift
+//  CustomViewCellWithLabel.swift
 //  HW13
 //
-//  Created by Виктор Басиев on 25.08.2022.
+//  Created by Виктор Басиев on 26.08.2022.
 //
+
 
 import UIKit
 import SnapKit
 
-final class CustomViewCellSwitcher: UITableViewCell {
+final class CustomViewCellWithLabel: UITableViewCell {
     
     var setting: Settings? {
         didSet {
-            image.image = setting?.image
-            label.text = setting?.label
+            imageLeft.image = setting?.image
+            labelLeft.text = setting?.label
+            labelRight.text = setting?.labelDiscription
         }
     }
 
 //MARK: - Outlets
     
-    private let image: UIImageView = {
+    private let imageLeft: UIImageView = {
         let image = UIImageView()
         image.clipsToBounds = true
         image.contentMode = .scaleAspectFill
         return image
     }()
     
-    private let label: UILabel = {
+    private let labelLeft: UILabel = {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 18, weight: .bold)
         return label
     }()
     
-    private let switcher: UISwitch = {
-        let switcher = UISwitch()
-        return switcher
+    private let labelRight: UILabel = {
+        let label = UILabel()
+        label.font = UIFont.systemFont(ofSize: 16)
+        return label
     }()
     
     private var stackView = UIStackView()
@@ -54,9 +57,9 @@ final class CustomViewCellSwitcher: UITableViewCell {
 //MARK: - Setup
     
     private func setupHierarhy() {
-        stackView = UIStackView(arrangedSubviews: [image, label], axis: .horizontal, spasing: 10, distribution: .fill, aligment: nil)
+        stackView = UIStackView(arrangedSubviews: [imageLeft, labelLeft], axis: .horizontal, spasing: 10, distribution: .fill, aligment: nil)
         addSubview(stackView)
-        contentView.addSubview(switcher)
+        contentView.addSubview(labelRight)
     }
     
     private func setupLayout() {
@@ -65,12 +68,12 @@ final class CustomViewCellSwitcher: UITableViewCell {
             make.left.equalTo(contentView).offset(20)
             make.center.equalTo(contentView)
         }
-        image.snp.makeConstraints { make in
+        imageLeft.snp.makeConstraints { make in
             make.height.width.equalTo(30)
         }
-        switcher.snp.makeConstraints { make in
-            make.top.equalTo(contentView).offset(10)
-            make.right.equalTo(self).offset(-20)
+        labelRight.snp.makeConstraints { make in
+            make.top.equalTo(contentView).offset(15)
+            make.right.equalTo(self).offset(-40)
         }
     }
     
@@ -82,3 +85,4 @@ final class CustomViewCellSwitcher: UITableViewCell {
         self.setting = nil
     }
 }
+

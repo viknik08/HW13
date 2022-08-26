@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-class SettingsViewController: UIViewController {
+final class SettingsViewController: UIViewController {
     
     private var settings: [[Settings]]?
     
@@ -16,7 +16,7 @@ class SettingsViewController: UIViewController {
     
     private lazy var tableView: UITableView = {
         let tableView = UITableView(frame: .zero, style: .grouped)
-        tableView.register(CustomViewCellSwitcher.self, forCellReuseIdentifier: "cell")
+//        tableView.register(CustomViewCellSwitcher.self, forCellReuseIdentifier: "cell")
         tableView.delegate = self
         tableView.dataSource = self
         return tableView
@@ -50,8 +50,9 @@ class SettingsViewController: UIViewController {
     private func registerCell() {
         tableView.register(CustomViewCellSwitcher.self, forCellReuseIdentifier: "switcherCell")
         tableView.register(CustomViewCellNotification.self, forCellReuseIdentifier: "notificationCell")
-        tableView.register(CustomViewCell.self, forCellReuseIdentifier: "labelCell")
+        tableView.register(CustomViewCellWithLabel.self, forCellReuseIdentifier: "labelCell")
         tableView.register(CustomViewCell.self, forCellReuseIdentifier: "emptyCell")
+        tableView.register(CustomViewCellTitle.self, forCellReuseIdentifier: "titleCell")
     }
 }
 
@@ -60,7 +61,14 @@ class SettingsViewController: UIViewController {
 extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        50
+        guard let cell = settings?[indexPath.section][indexPath.row] else { return 0 }
+        switch cell.type {
+            
+        case .title:
+            return 120
+        default:
+            return 50
+        }
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -85,12 +93,17 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
             cell.accessoryType = .disclosureIndicator
             return cell
         case .label:
-            let cell = tableView.dequeueReusableCell(withIdentifier: "labelCell", for: indexPath) as! CustomViewCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: "labelCell", for: indexPath) as! CustomViewCellWithLabel
             cell.setting = settings?[indexPath.section][indexPath.row]
             cell.accessoryType = .disclosureIndicator
             return cell
         case .empty:
             let cell = tableView.dequeueReusableCell(withIdentifier: "emptyCell", for: indexPath) as! CustomViewCell
+            cell.setting = settings?[indexPath.section][indexPath.row]
+            cell.accessoryType = .disclosureIndicator
+            return cell
+        case .title:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "titleCell", for: indexPath) as! CustomViewCellTitle
             cell.setting = settings?[indexPath.section][indexPath.row]
             cell.accessoryType = .disclosureIndicator
             return cell
@@ -103,6 +116,4 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
         viewController.setting = settings?[indexPath.section][indexPath.row]
         navigationController?.pushViewController(viewController, animated: true)
     }
-    
-    
 }

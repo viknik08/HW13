@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-class CustomViewCell: UITableViewCell {
+final class CustomViewCell: UITableViewCell {
     
     var setting: Settings? {
         didSet {
