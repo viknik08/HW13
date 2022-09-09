@@ -15,6 +15,8 @@ final class DetailViewController: UIViewController {
     
     private lazy var label: UILabel = {
         let label = UILabel()
+        label.numberOfLines = 0
+        label.textAlignment = .center
         label.font = UIFont.systemFont(ofSize: 35, weight: .bold)
         return label
     }()
@@ -48,13 +50,18 @@ final class DetailViewController: UIViewController {
             make.width.height.equalTo(50)
         }
         label.snp.makeConstraints { make in
-            make.centerX.equalTo(view)
+            make.right.equalTo(view).inset(20)
+            make.left.equalTo(view).offset(20)
             make.top.equalTo(image.snp.bottom).offset(30)
         }
     }
     
     private func fillSetttings() {
-        image.image = setting?.image
+        if setting?.isSystemName == true {
+            image.image = UIImage(systemName: setting?.image ?? "")
+        } else {
+            image.image = UIImage(named: setting?.image ?? "")
+        }
         label.text = "This is \(setting?.label ?? "")"
     }
 }

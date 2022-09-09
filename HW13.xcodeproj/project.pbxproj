@@ -14,11 +14,9 @@
 		BEEBF34A28B7659500B9D46D /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEEBF34928B7659500B9D46D /* Model.swift */; };
 		BEEBF34C28B765CA00B9D46D /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEEBF34B28B765CA00B9D46D /* DetailView.swift */; };
 		BEEBF34E28B765EB00B9D46D /* CustomViewCellSwitcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEEBF34D28B765EB00B9D46D /* CustomViewCellSwitcher.swift */; };
-		BEEBF35028B7660B00B9D46D /* CustomViewCellNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEEBF34F28B7660B00B9D46D /* CustomViewCellNotification.swift */; };
 		BEEBF35228B7662300B9D46D /* CustomViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEEBF35128B7662300B9D46D /* CustomViewCell.swift */; };
 		BEEBF35528B76AF700B9D46D /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = BEEBF35428B76AF700B9D46D /* SnapKit */; };
 		BEEBF35728B77CAA00B9D46D /* Extension + StackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEEBF35628B77CAA00B9D46D /* Extension + StackView.swift */; };
-		BEEBF35B28B8C60A00B9D46D /* CustomViewCellWithLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEEBF35A28B8C60900B9D46D /* CustomViewCellWithLabel.swift */; };
 		BEEBF35D28B8CD5000B9D46D /* CustomViewCellTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEEBF35C28B8CD5000B9D46D /* CustomViewCellTitle.swift */; };
 /* End PBXBuildFile section */
 
@@ -32,10 +30,8 @@
 		BEEBF34928B7659500B9D46D /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		BEEBF34B28B765CA00B9D46D /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		BEEBF34D28B765EB00B9D46D /* CustomViewCellSwitcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomViewCellSwitcher.swift; sourceTree = "<group>"; };
-		BEEBF34F28B7660B00B9D46D /* CustomViewCellNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomViewCellNotification.swift; sourceTree = "<group>"; };
 		BEEBF35128B7662300B9D46D /* CustomViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomViewCell.swift; sourceTree = "<group>"; };
 		BEEBF35628B77CAA00B9D46D /* Extension + StackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension + StackView.swift"; sourceTree = "<group>"; };
-		BEEBF35A28B8C60900B9D46D /* CustomViewCellWithLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomViewCellWithLabel.swift; sourceTree = "<group>"; };
 		BEEBF35C28B8CD5000B9D46D /* CustomViewCellTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomViewCellTitle.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -72,7 +68,6 @@
 			children = (
 				BEEBF34328B763BC00B9D46D /* Sources */,
 				BEEBF34228B763AE00B9D46D /* Resources */,
-				BEEBF33C28B75F8F00B9D46D /* Info.plist */,
 			);
 			path = HW13;
 			sourceTree = "<group>";
@@ -81,6 +76,7 @@
 			isa = PBXGroup;
 			children = (
 				BEEBF33728B75F8F00B9D46D /* Assets.xcassets */,
+				BEEBF33C28B75F8F00B9D46D /* Info.plist */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -135,9 +131,7 @@
 			isa = PBXGroup;
 			children = (
 				BEEBF34D28B765EB00B9D46D /* CustomViewCellSwitcher.swift */,
-				BEEBF34F28B7660B00B9D46D /* CustomViewCellNotification.swift */,
 				BEEBF35128B7662300B9D46D /* CustomViewCell.swift */,
-				BEEBF35A28B8C60900B9D46D /* CustomViewCellWithLabel.swift */,
 				BEEBF35C28B8CD5000B9D46D /* CustomViewCellTitle.swift */,
 			);
 			path = TableViewCell;
@@ -218,10 +212,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BEEBF35B28B8C60A00B9D46D /* CustomViewCellWithLabel.swift in Sources */,
 				BEEBF33328B75F8700B9D46D /* SettingsViewController.swift in Sources */,
 				BEEBF34A28B7659500B9D46D /* Model.swift in Sources */,
-				BEEBF35028B7660B00B9D46D /* CustomViewCellNotification.swift in Sources */,
 				BEEBF32F28B75F8700B9D46D /* AppDelegate.swift in Sources */,
 				BEEBF34C28B765CA00B9D46D /* DetailView.swift in Sources */,
 				BEEBF35D28B8CD5000B9D46D /* CustomViewCellTitle.swift in Sources */,
@@ -360,7 +352,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 65ZD43WNWU;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = HW13/Info.plist;
+				INFOPLIST_FILE = HW13/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -387,7 +379,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 65ZD43WNWU;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = HW13/Info.plist;
+				INFOPLIST_FILE = HW13/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";

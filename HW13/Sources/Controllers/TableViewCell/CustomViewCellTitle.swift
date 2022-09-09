@@ -12,7 +12,7 @@ final class CustomViewCellTitle: UITableViewCell {
     
     var setting: Settings? {
         didSet {
-            image.image = setting?.image
+            image.image = UIImage(named: setting?.image ?? "")
             label.text = setting?.label
             labelBottom.text = setting?.labelDiscription
         }

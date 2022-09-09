@@ -12,23 +12,46 @@ final class CustomViewCellSwitcher: UITableViewCell {
     
     var setting: Settings? {
         didSet {
-            image.image = setting?.image
+            if setting?.isSystemName == true {
+                image.image = UIImage(systemName: setting?.image ?? "")
+            } else {
+                image.image = UIImage(named: setting?.image ?? "")
+            }
+            
+            switch setting?.backgroundColor {
+                
+            case .systemBlue:
+                viewForImage.backgroundColor = .systemBlue
+            case .systemOrange:
+                viewForImage.backgroundColor = .systemOrange
+            default:
+                viewForImage.backgroundColor = .none
+            }
+            
             label.text = setting?.label
         }
     }
 
 //MARK: - Outlets
     
+    private let viewForImage: UIView = {
+        let view = UIView()
+        view.layer.cornerRadius = 6
+        view.backgroundColor = .systemCyan
+        return view
+    }()
+    
     private let image: UIImageView = {
         let image = UIImageView()
         image.clipsToBounds = true
-        image.contentMode = .scaleAspectFill
+        image.tintColor = .white
+        image.contentMode = .scaleAspectFit
         return image
     }()
     
     private let label: UILabel = {
         let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 18, weight: .bold)
+        label.textColor = .black
         return label
     }()
     
@@ -54,8 +77,9 @@ final class CustomViewCellSwitcher: UITableViewCell {
 //MARK: - Setup
     
     private func setupHierarhy() {
-        stackView = UIStackView(arrangedSubviews: [image, label], axis: .horizontal, spasing: 10, distribution: .fill, aligment: nil)
+        stackView = UIStackView(arrangedSubviews: [viewForImage, label], axis: .horizontal, spasing: 10, distribution: .fill, aligment: nil)
         addSubview(stackView)
+        viewForImage.addSubview(image)
         contentView.addSubview(switcher)
     }
     
@@ -65,8 +89,15 @@ final class CustomViewCellSwitcher: UITableViewCell {
             make.left.equalTo(contentView).offset(20)
             make.center.equalTo(contentView)
         }
+        viewForImage.snp.makeConstraints { make in
+            make.centerY.equalTo(contentView)
+            make.left.equalTo(contentView).offset(20)
+            make.height.equalTo(30)
+            make.width.equalTo(30)
+        }
         image.snp.makeConstraints { make in
-            make.height.width.equalTo(30)
+            make.center.equalTo(viewForImage)
+            make.height.width.equalTo(23)
         }
         switcher.snp.makeConstraints { make in
             make.top.equalTo(contentView).offset(10)
