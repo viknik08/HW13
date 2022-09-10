@@ -7,9 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BEE09C5928CB3F4A00541A7C /* DetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEE09C5828CB3F4A00541A7C /* DetailController.swift */; };
+		BEE09C5D28CB3F8400541A7C /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEE09C5C28CB3F8400541A7C /* SettingsController.swift */; };
 		BEEBF32F28B75F8700B9D46D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEEBF32E28B75F8700B9D46D /* AppDelegate.swift */; };
 		BEEBF33128B75F8700B9D46D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEEBF33028B75F8700B9D46D /* SceneDelegate.swift */; };
-		BEEBF33328B75F8700B9D46D /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEEBF33228B75F8700B9D46D /* SettingsViewController.swift */; };
+		BEEBF33328B75F8700B9D46D /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEEBF33228B75F8700B9D46D /* SettingsView.swift */; };
 		BEEBF33828B75F8F00B9D46D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BEEBF33728B75F8F00B9D46D /* Assets.xcassets */; };
 		BEEBF34A28B7659500B9D46D /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEEBF34928B7659500B9D46D /* Model.swift */; };
 		BEEBF34C28B765CA00B9D46D /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEEBF34B28B765CA00B9D46D /* DetailView.swift */; };
@@ -21,10 +23,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BEE09C5828CB3F4A00541A7C /* DetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailController.swift; sourceTree = "<group>"; };
+		BEE09C5C28CB3F8400541A7C /* SettingsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsController.swift; sourceTree = "<group>"; };
 		BEEBF32B28B75F8700B9D46D /* HW13.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HW13.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEEBF32E28B75F8700B9D46D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BEEBF33028B75F8700B9D46D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		BEEBF33228B75F8700B9D46D /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		BEEBF33228B75F8700B9D46D /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		BEEBF33728B75F8F00B9D46D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BEEBF33C28B75F8F00B9D46D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BEEBF34928B7659500B9D46D /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
@@ -47,6 +51,57 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BEE09C5428CB3EE600541A7C /* TableViewMVC */ = {
+			isa = PBXGroup;
+			children = (
+				BEE09C5B28CB3F6200541A7C /* Controller */,
+				BEE09C5A28CB3F5900541A7C /* View */,
+			);
+			path = TableViewMVC;
+			sourceTree = "<group>";
+		};
+		BEE09C5528CB3EF500541A7C /* DetailViewMVC */ = {
+			isa = PBXGroup;
+			children = (
+				BEE09C5728CB3F2500541A7C /* Controller */,
+				BEE09C5628CB3F1D00541A7C /* View */,
+			);
+			path = DetailViewMVC;
+			sourceTree = "<group>";
+		};
+		BEE09C5628CB3F1D00541A7C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BEEBF34B28B765CA00B9D46D /* DetailView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		BEE09C5728CB3F2500541A7C /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				BEE09C5828CB3F4A00541A7C /* DetailController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		BEE09C5A28CB3F5900541A7C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BEEBF34828B7644000B9D46D /* TableViewCell */,
+				BEEBF33228B75F8700B9D46D /* SettingsView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		BEE09C5B28CB3F6200541A7C /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				BEE09C5C28CB3F8400541A7C /* SettingsController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		BEEBF32228B75F8700B9D46D = {
 			isa = PBXGroup;
 			children = (
@@ -112,9 +167,8 @@
 		BEEBF34628B7640C00B9D46D /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				BEEBF34828B7644000B9D46D /* TableViewCell */,
-				BEEBF33228B75F8700B9D46D /* SettingsViewController.swift */,
-				BEEBF34B28B765CA00B9D46D /* DetailView.swift */,
+				BEE09C5528CB3EF500541A7C /* DetailViewMVC */,
+				BEE09C5428CB3EE600541A7C /* TableViewMVC */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -212,14 +266,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BEEBF33328B75F8700B9D46D /* SettingsViewController.swift in Sources */,
+				BEEBF33328B75F8700B9D46D /* SettingsView.swift in Sources */,
 				BEEBF34A28B7659500B9D46D /* Model.swift in Sources */,
 				BEEBF32F28B75F8700B9D46D /* AppDelegate.swift in Sources */,
 				BEEBF34C28B765CA00B9D46D /* DetailView.swift in Sources */,
 				BEEBF35D28B8CD5000B9D46D /* CustomViewCellTitle.swift in Sources */,
 				BEEBF35228B7662300B9D46D /* CustomViewCell.swift in Sources */,
+				BEE09C5D28CB3F8400541A7C /* SettingsController.swift in Sources */,
 				BEEBF34E28B765EB00B9D46D /* CustomViewCellSwitcher.swift in Sources */,
 				BEEBF35728B77CAA00B9D46D /* Extension + StackView.swift in Sources */,
+				BEE09C5928CB3F4A00541A7C /* DetailController.swift in Sources */,
 				BEEBF33128B75F8700B9D46D /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

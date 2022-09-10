@@ -6,10 +6,12 @@
       "scale" : "1x"
     },
     {
+      "filename" : "vpn-1.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
+      "filename" : "vpn-2.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
