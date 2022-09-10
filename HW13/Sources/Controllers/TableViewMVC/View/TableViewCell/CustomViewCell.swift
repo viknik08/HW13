@@ -1,5 +1,5 @@
 //
-//  CustomViewCellSwitcher.swift
+//  CustomViewCell.swift
 //  HW13
 //
 //  Created by Виктор Басиев on 25.08.2022.
@@ -8,27 +8,53 @@
 import UIKit
 import SnapKit
 
-final class CustomViewCellSwitcher: UITableViewCell {
-    
+final class CustomViewCell: UITableViewCell {
+
     var setting: Settings? {
         didSet {
+            switch setting?.type {
+                
+            case .label:
+                labelRight.isHidden = false
+                imageNotification.isHidden = true
+            case .notification:
+                labelRight.isHidden = true
+                imageNotification.isHidden = false
+            default:
+                labelRight.isHidden = true
+                imageNotification.isHidden = true
+            }
+            
             if setting?.isSystemName == true {
                 image.image = UIImage(systemName: setting?.image ?? "")
             } else {
-                image.image = UIImage(named: setting?.image ?? "")
+                if setting?.image == "siriN" || setting?.image == "wallet" {
+                    image.image = UIImage(named: setting?.image ?? "")?.withRenderingMode(.alwaysOriginal)
+                } else {
+                    image.image = UIImage(named: setting?.image ?? "")?.withRenderingMode(.alwaysTemplate)
+                }
             }
             
             switch setting?.backgroundColor {
-                
+
             case .systemBlue:
                 viewForImage.backgroundColor = .systemBlue
-            case .systemOrange:
-                viewForImage.backgroundColor = .systemOrange
+            case .systemGreen:
+                viewForImage.backgroundColor = .systemGreen
+            case .systemRed:
+                viewForImage.backgroundColor = .systemRed
+            case .systemIndigo:
+                viewForImage.backgroundColor = .systemIndigo
+            case .systemGray:
+                viewForImage.backgroundColor = .systemGray
+            case .black:
+                viewForImage.backgroundColor = .black
             default:
                 viewForImage.backgroundColor = .none
             }
             
             label.text = setting?.label
+            labelRight.text = setting?.labelDiscription
         }
     }
 
@@ -55,9 +81,18 @@ final class CustomViewCellSwitcher: UITableViewCell {
         return label
     }()
     
-    private let switcher: UISwitch = {
-        let switcher = UISwitch()
-        return switcher
+    private let imageNotification: UIImageView = {
+        let image = UIImageView()
+        image.clipsToBounds = true
+        image.image = UIImage(named: "messred")
+        image.contentMode = .scaleAspectFill
+        return image
+    }()
+    
+    private let labelRight: UILabel = {
+        let label = UILabel()
+        label.textColor = .systemGray
+        return label
     }()
     
     private var stackView = UIStackView()
@@ -66,8 +101,8 @@ final class CustomViewCellSwitcher: UITableViewCell {
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        setupHierarhy()
-        setupLayout()
+        setupHierarhyNotification()
+        setupLayoutNotification()
     }
     
     required init?(coder: NSCoder) {
@@ -75,15 +110,16 @@ final class CustomViewCellSwitcher: UITableViewCell {
     }
     
 //MARK: - Setup
-    
-    private func setupHierarhy() {
+        
+    private func setupHierarhyNotification() {
         stackView = UIStackView(arrangedSubviews: [viewForImage, label], axis: .horizontal, spasing: 10, distribution: .fill, aligment: nil)
         addSubview(stackView)
         viewForImage.addSubview(image)
-        contentView.addSubview(switcher)
+        contentView.addSubview(imageNotification)
+        contentView.addSubview(labelRight)
     }
     
-    private func setupLayout() {
+    private func setupLayoutNotification() {
         stackView.snp.makeConstraints { make in
             make.top.equalTo(contentView).offset(10)
             make.left.equalTo(contentView).offset(20)
@@ -99,12 +135,17 @@ final class CustomViewCellSwitcher: UITableViewCell {
             make.center.equalTo(viewForImage)
             make.height.width.equalTo(23)
         }
-        switcher.snp.makeConstraints { make in
+        imageNotification.snp.makeConstraints { make in
             make.top.equalTo(contentView).offset(10)
-            make.right.equalTo(self).offset(-20)
+            make.right.equalTo(self).offset(-40)
+            make.height.width.equalTo(30)
+        }
+        labelRight.snp.makeConstraints { make in
+            make.top.equalTo(contentView).offset(15)
+            make.right.equalTo(self).offset(-40)
         }
     }
-    
+        
 // MARK: - Reuse
     
     override func prepareForReuse() {
