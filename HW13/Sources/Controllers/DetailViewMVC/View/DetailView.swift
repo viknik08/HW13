@@ -7,16 +7,27 @@
 
 import UIKit
 
-final class DetailViewController: UIViewController {
-    
-    var setting: Settings?
-    
+final class DetailView: UIViewController {
+
+    var setting: Settings? {
+        didSet {
+            if setting?.isSystemName == true {
+                image.image = UIImage(systemName: setting?.image ?? "")
+            } else {
+                image.image = UIImage(named: setting?.image ?? "")
+            }
+            
+            label.text = setting?.label
+        }
+    }
+
 //MARK: - Outlets
     
     private lazy var label: UILabel = {
         let label = UILabel()
         label.numberOfLines = 0
         label.textAlignment = .center
+        label.textColor = .black
         label.font = UIFont.systemFont(ofSize: 35, weight: .bold)
         return label
     }()
@@ -27,14 +38,17 @@ final class DetailViewController: UIViewController {
         return imageView
     }()
     
-//MARK: - Lifecycle
+//MARK: - Init
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .systemGray
+        commonInit()
+    }
+    
+    private func commonInit() {
+        view.backgroundColor = .white
         setupHierarhy()
-        fillSetttings()
-        setupLayot()
+        setupLayout()
     }
     
 //MARK: - Setup
@@ -44,7 +58,7 @@ final class DetailViewController: UIViewController {
         view.addSubview(image)
     }
     
-    private func setupLayot() {
+    private func setupLayout() {
         image.snp.makeConstraints { make in
             make.centerY.centerX.equalTo(view)
             make.width.height.equalTo(50)
@@ -54,14 +68,5 @@ final class DetailViewController: UIViewController {
             make.left.equalTo(view).offset(20)
             make.top.equalTo(image.snp.bottom).offset(30)
         }
-    }
-    
-    private func fillSetttings() {
-        if setting?.isSystemName == true {
-            image.image = UIImage(systemName: setting?.image ?? "")
-        } else {
-            image.image = UIImage(named: setting?.image ?? "")
-        }
-        label.text = "This is \(setting?.label ?? "")"
     }
 }
